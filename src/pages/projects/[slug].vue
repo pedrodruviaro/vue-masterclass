@@ -9,7 +9,12 @@ const project = ref<Project | null>(null)
 const pageStore = usePageStore()
 
 const getProject = async () => {
-  const { data, error } = await projectQuery(route.params.slug as string)
+  const { data, error, status } = await projectQuery(route.params.slug as string)
+
+  if (error) {
+    useErrorStore().setError({ error, customCode: status })
+  }
+
   project.value = data
 }
 
