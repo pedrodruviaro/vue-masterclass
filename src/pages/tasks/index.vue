@@ -4,6 +4,9 @@ import { supabase } from '@/lib/supabaseClient'
 import type { Tables } from 'database/types'
 import type { ColumnDef } from '@tanstack/vue-table'
 
+const { pageData } = usePageStore()
+pageData.title = 'Tasks'
+
 const tasks = ref<Tables<'tasks'>[] | null>(null)
 
 const getTasks = async () => {

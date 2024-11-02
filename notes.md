@@ -57,3 +57,7 @@ Install
 
 - https://github.com/unplugin/unplugin-auto-import
 - https://uvr.esm.is/introduction#auto-imports
+
+## HMR and Pinia
+
+- https://pinia.vuejs.org/cookbook/hot-module-replacement.html
