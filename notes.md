@@ -52,3 +52,7 @@ Install
 - $ db:reset
 - $ supabase gen types typescrip
 - $ db:seed
+
+## Auto imports
+
+- https://github.com/unplugin/unplugin-auto-import
