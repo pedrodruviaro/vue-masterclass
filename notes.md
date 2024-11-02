@@ -1,5 +1,7 @@
 # Relevant notes
 
+- Original repo: https://github.com/vueschool/vuejs-masterclass-2024-edition/
+
 ## Creating projects table and _current_status_ enum
 
 ```sql
