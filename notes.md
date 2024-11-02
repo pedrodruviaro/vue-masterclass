@@ -56,3 +56,4 @@ Install
 ## Auto imports
 
 - https://github.com/unplugin/unplugin-auto-import
+- https://uvr.esm.is/introduction#auto-imports
