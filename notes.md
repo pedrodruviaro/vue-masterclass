@@ -50,7 +50,7 @@ Install
 
 - $ supabase migration new NAME_MIGRATION
 - $ db:reset
-- $ supabase gen types typescrip
+- $ supabase:types
 - $ db:seed
 
 ## Auto imports
