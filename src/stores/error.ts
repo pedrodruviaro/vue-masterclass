@@ -8,8 +8,11 @@ interface SetErrorOptions {
 
 export const useErrorStore = defineStore('error-store', () => {
   const activeError = ref<ExtendedPostgrestError | CustomError | null>(null)
+  const isCustomError = ref(false)
 
   const setError = ({ error, customCode }: SetErrorOptions) => {
+    if (typeof error === 'string') isCustomError.value = true
+
     if (typeof error === 'string' || error instanceof Error) {
       activeError.value = typeof error === 'string' ? Error(error) : error
       activeError.value.customCode = customCode || 500
@@ -21,8 +24,15 @@ export const useErrorStore = defineStore('error-store', () => {
     activeError.value.statusCode = customCode || 500
   }
 
+  const clearError = () => {
+    activeError.value = null
+    isCustomError.value = false
+  }
+
   return {
     activeError,
+    isCustomError,
     setError,
+    clearError,
   }
 })
