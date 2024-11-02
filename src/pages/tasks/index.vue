@@ -6,12 +6,14 @@ import type { ColumnDef } from '@tanstack/vue-table'
 
 const tasks = ref<Tables<'tasks'>[] | null>(null)
 
-;(async () => {
+const getTasks = async () => {
   const { data, error } = await supabase.from('tasks').select()
   if (!data) return
 
   tasks.value = data
-})()
+}
+
+await getTasks()
 
 const columns: ColumnDef<Tables<'tasks'>>[] = [
   {
@@ -60,5 +62,7 @@ const columns: ColumnDef<Tables<'tasks'>>[] = [
 </script>
 
 <template>
-  <DataTable v-if="tasks" :columns="columns" :data="tasks" />
+  <div>
+    <DataTable v-if="tasks" :columns="columns" :data="tasks" />
+  </div>
 </template>
