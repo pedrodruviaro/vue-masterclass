@@ -35,9 +35,20 @@ Install
 ### Creating migrations
 
 - https://supabase.com/docs/reference/cli/supabase-migration-new
-- $ supabase migration new projects-schema
+- $ supabase migration new
 - $ supabase db reset --linked
 
 ### Faker
 
 - $ node --env-file=.env database/seed.js
+
+### Generating types from CLI
+
+- $ supabase gen types typescript --project-id nfzimfwayvslaspvhakc --schema public > database/types.ts
+
+### Add more migrations
+
+- $ supabase migration new NAME_MIGRATION
+- $ db:reset
+- $ supabase gen types typescrip
+- $ db:seed
