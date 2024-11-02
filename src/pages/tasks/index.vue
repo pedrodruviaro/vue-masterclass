@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
 import { ref } from 'vue'
+import { Button } from '@/components/ui/button'
 import type { Tables } from 'database/types'
 
 const tasks = ref<Tables<'tasks'>[] | null>(null)
@@ -16,6 +17,7 @@ const tasks = ref<Tables<'tasks'>[] | null>(null)
 <template>
   <div>
     <h1>Projects view</h1>
+    <Button>Click me</Button>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/projects/12">Projects 123</RouterLink>
 
