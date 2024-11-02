@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { supabase } from '@/lib/supabaseClient'
+import { onMounted } from 'vue'
+
+onMounted(async () => {
+  const { data, error } = await supabase.from('projects').select()
+  console.log(data)
+})
+</script>
 
 <template>
   <div>
