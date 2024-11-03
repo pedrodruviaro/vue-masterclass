@@ -34,10 +34,13 @@ const accountLinks = [
   },
 ]
 
+const router = useRouter()
+
 const actionHandler = async (title: string) => {
   if (title === 'Sign Out') {
     const { logout } = await import('@/utils/supabaseAuth')
-    await logout()
+    const isLoggedOut = await logout()
+    if (isLoggedOut) router.push('/login')
   }
 }
 </script>
