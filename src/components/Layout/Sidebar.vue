@@ -30,10 +30,16 @@ const accountLinks = [
   },
   {
     title: 'Sign Out',
-    to: '/signout',
     icon: 'lucide:log-out',
   },
 ]
+
+const actionHandler = async (title: string) => {
+  if (title === 'Sign Out') {
+    const { logout } = await import('@/utils/supabaseAuth')
+    await logout()
+  }
+}
 </script>
 
 <template>
@@ -54,7 +60,7 @@ const accountLinks = [
       </div>
 
       <div class="border-y bg-background py-3 text-center">
-        <SidebarLinks :links="accountLinks" />
+        <SidebarLinks :links="accountLinks" @action-clicked="actionHandler" />
       </div>
     </nav>
   </aside>
