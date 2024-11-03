@@ -6,10 +6,4 @@ const router = createRouter({
   routes, // lazy loaded by default
 })
 
-router.beforeEach(async () => {
-  const { getSession } = useAuthStore()
-  await getSession()
-  // note about perfomance => supabsae gets the token from localStorage. Only calls DB If the token doest exists
-})
-
 export default router

@@ -2,8 +2,7 @@
 const errorStore = useErrorStore()
 onErrorCaptured(error => errorStore.setError({ error }))
 
-const authStore = useAuthStore()
-onMounted(async () => await authStore.getSession())
+onMounted(() => useAuthStore().trackAuthChanges())
 </script>
 
 <template>
